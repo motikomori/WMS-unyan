@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Название линии</title>
+    <title>Линия запущена</title>
     <style>
         body {
             font-family: 'Fira Sans', sans-serif;
@@ -51,6 +51,8 @@
             align-items: center;
         }
 
+      
+
         label {
             font-size: 36px;
             color: #003366;
@@ -58,22 +60,25 @@
             margin-left: 80px; 
         }
 
-        input[type="text"] {
-            width: 600px;
-            height: 90px;
-            font-size: 32px;
-            padding: 0 20px;
-            border: 2px solid #6699FF;
-            border-radius: 30px;
-            box-sizing: border-box;
-            margin-left: 80px;
-        }
 
         label[for="your-product"] {
             font-size: 36px;
             color: #003366;
             width: 1000px;
             margin-left: 40px; 
+        }
+
+        p {
+            font-size: 36px;
+            color: #003366;
+            margin-left: 80px; 
+        }
+
+        .circle {
+            width: 38px; 
+            height: 38px; 
+            background-color: #66CC33; 
+            border-radius: 50%;
         }
         
         .your-product-view{
@@ -87,12 +92,16 @@
         }
 
         label[for="your-product-view"] {
-            font-size: 32px;
+            font-size: 36px;
             color: #003366;
             width: 600px;
             height: 90px;
         }
-
+        
+        label[for="operating-mode"] {
+            font-size: 36px;
+            color: #66CC33;
+            }
 
         .reference-btn {
             width: 300px;
@@ -189,12 +198,6 @@
                 align-items: flex-start;
             }
 
-            input[type="text"], .reference-btn {
-                width: 80%;
-                margin: 10px 0;
-                margin-left: 80px;
-            }
-
             label[for="your-product"] {
             font-size: 36px;
             color: #003366;
@@ -202,6 +205,7 @@
             margin-left: 80px; 
             padding: 20 0px;
             }
+            
 
             .actions-container {
                 flex-direction: column;
@@ -224,16 +228,16 @@
         <div class="form-field">
             <label for="product">Продукт:</label>
             <p>00000000001</p>
-            
         </div>
         <div class="form-field">
             <label for="batch-number">Номер партии:</label>
             <p>1</p>
         </div>
         <div class="form-field">
-            <label for="batch-number">Режим::</label>
+            <label for="mode">Режим:</label>
             <p>Маркировка: Нанесение</p>
-            <label for="product">АКТИВНО:</label>
+            <label for="operating-mode">АКТИВНО:</label>
+            <div class="circle"></div>
         </div>
 
         <div class="your-product-view">
