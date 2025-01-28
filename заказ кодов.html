@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Линия запущена</title>
+    <title>Название линии</title>
     <style>
         body {
             font-family: 'Fira Sans', sans-serif;
@@ -51,8 +51,6 @@
             align-items: center;
         }
 
-      
-
         label {
             font-size: 36px;
             color: #003366;
@@ -60,18 +58,15 @@
             margin-left: 80px; 
         }
 
-
-        label[for="your-product"] {
-            font-size: 36px;
-            color: #003366;
-            width: 1000px;
-            margin-left: 40px; 
-        }
-
-        p {
-            font-size: 36px;
-            color: #003366;
-            margin-left: 80px; 
+        input[type="text"] {
+            width: 600px;
+            height: 90px;
+            font-size: 32px;
+            padding: 0 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 80px;
         }
 
         .circle {
@@ -81,22 +76,6 @@
             border-radius: 50%;
         }
         
-        .your-product-view{
-
-            font-size: 32px;
-            border: none; 
-            display: flex;
-            align-items: center;
-            margin-bottom: 200px;
-            
-        }
-
-        label[for="your-product-view"] {
-            font-size: 36px;
-            color: #003366;
-            width: 600px;
-            height: 90px;
-        }
         
         label[for="operating-mode"] {
             font-size: 36px;
@@ -106,6 +85,7 @@
             margin-right: 0px; 
             width: 190px;
             }
+
 
         .reference-btn {
             width: 300px;
@@ -119,40 +99,8 @@
             cursor: pointer;
         }
 
-        .extra-options {
-            display: flex;
-            align-items: center;
-            margin-left: 80px;
-        }
-
-        .extra-options a {
-            font-size: 32px;
-            color: #003366;
-            text-decoration: none;
-            
-        }
-
-        .extra-options-btn {
-            width: 64px;
-            height: 64px;
-            background-color: #6699FF;
-            border-radius: 50%;
-            margin-left: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .extra-options-btn img {
-            width: 35px;
-            height: 35px;
-        }
-
         .actions-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 50px;
+            margin-top: 200px;
             padding: 0 80px;
         }
 
@@ -168,10 +116,6 @@
             text-align: center;
         }
 
-        .action-btn.second {
-            background-color: #E5EDF8;
-            color: #2D3083;
-        }
 
         @media (max-width: 1300px) {
             .header, .main-content {
@@ -193,13 +137,19 @@
             }
 
             .main-content {
-                padding: 40px;
+                padding: 20px;
                 
             }
 
             .form-field {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+
+            input[type="text"], .reference-btn {
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
             }
 
             label[for="your-product"] {
@@ -210,6 +160,7 @@
             padding: 20 0px;
             }
 
+
             label[for="operating-mode"] {
             font-size: 36px;
             color: #66CC33;
@@ -218,7 +169,6 @@
             margin-right: 0px; 
             width: 190px;
             }
-            
 
             .actions-container {
                 flex-direction: column;
@@ -239,27 +189,19 @@
     </header>
     <main class="main-content">
         <div class="form-field">
-            <label for="product">Продукт:</label>
-            <p>00000000001</p>
+            <label for="product">Продукт</label>
+            <input type="text" id="product" placeholder="Выберите продукт, или сканируйте">
+            <button class="reference-btn">СПРАВОЧНИК</button>
         </div>
         <div class="form-field">
-            <label for="batch-number">Номер партии:</label>
-            <p>1</p>
-        </div>
-        <div class="form-field">
-            <label for="mode">Режим:</label>
-            <p>Маркировка: Нанесение</p>
-            <label for="operating-mode">АКТИВНО</label>
-            <div class="circle"></div>
+            <label for="batch-number">Количество товара</label>
+            <input type="text" id="batch-number" placeholder="Введите количество товара">
         </div>
 
-        <div class="your-product-view">
-            <label for="your_product"> Выбранный продукт:</label>
-            <label for="your-product-view"> Крем-мыло с оливковым маслом и ромашкой "Ушастый нянь"</label>
-        </div>
         <div class="actions-container">
-            <button class="action-btn">СТОП</button>
-            <button class="action-btn second">ОТПРАВИТЬ ОТЧЁТ</button>
+            <button class="action-btn">ЗАКАЗАТЬ</button>
+            <label for="operating-mode">ПОЛУЧЕНО</label>
+            <div class="circle"></div>
         </div>
     </main>
 </body>
