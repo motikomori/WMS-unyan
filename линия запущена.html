@@ -12,14 +12,14 @@
             background-color: #ffffff;
         }
 
-        .header {
+        .header { /*все что касается прямоугольничка-шапки*/
             width: 100%;
             height: 130px;
             background-color: #FFFF99;
             position: relative;
         }
 
-        .header h1 {
+        .header h1 {/*все что касается надписи на шапке*/
             font-size: 64px;
             color: #003366;
             position: absolute;
@@ -28,7 +28,7 @@
             margin: 0;
         }
 
-        .header::after {
+        .header::after {/*все что касается линии под надписью на шапке*/
             content: "";
             position: absolute;
             bottom: 20px;
@@ -38,22 +38,20 @@
             background-color: #6699FF;
         }
 
-        .main-content {
+        .main-content { /*блок для всех элементов кроме шапки*/
             max-width: 1440px;
             width: 100%;
             padding: 30px;
             box-sizing: border-box;
         }
 
-        .form-field {
+        .form-field { /*блок для отделения элементов*/
             margin-bottom: 30px;
             display: flex;
             align-items: center;
         }
 
-      
-
-        label {
+        label { /*все для надписей вне шапки*/
             font-size: 36px;
             color: #003366;
             width: 270px;
@@ -61,27 +59,27 @@
         }
 
 
-        label[for="your-product"] {
+        label[for="your-product"] { /*надпись Выбранный продукт:*/
             font-size: 36px;
             color: #003366;
             width: 1000px;
             margin-left: 40px; 
         }
 
-        p {
+        p { /*надписи после названий полей*/
             font-size: 36px;
             color: #003366;
             margin-left: 80px; 
         }
 
-        .circle {
+        .circle { /*кружок около АКТИВНО*/
             width: 38px; 
             height: 38px; 
             background-color: #66CC33; 
             border-radius: 50%;
         }
         
-        .your-product-view{
+        .your-product-view{ /*блок выбранного продукта*/
 
             font-size: 32px;
             border: none; 
@@ -91,14 +89,14 @@
             
         }
 
-        label[for="your-product-view"] {
+        label[for="your-product-view"] { /*надпись с названием выбранного продукта*/
             font-size: 36px;
             color: #003366;
             width: 600px;
             height: 90px;
         }
         
-        label[for="operating-mode"] {
+        label[for="operating-mode"] { /*надпись с режимом работы: АКТИВНО*/
             font-size: 36px;
             color: #66CC33;
             font-weight: bold;
@@ -107,27 +105,14 @@
             width: 190px;
             }
 
-        .reference-btn {
-            width: 300px;
-            height: 90px;
-            font-size: 32px;
-            background-color: #6699FF;
-            color: #fff;
-            border: none;
-            border-radius: 30px;
-            margin-left: 30px;
-            cursor: pointer;
-        }
-
-
-        .actions-container {
+        .actions-container { /*блок с кнопками*/
             display: flex;
             justify-content: space-between;
             margin-top: 50px;
             padding: 0 80px;
         }
 
-        .action-btn {
+        .action-btn { /*кнопка СТОП + само описание стиля кнопок*/
             width: 330px;
             height: 90px;
             font-size: 32px;
@@ -139,17 +124,17 @@
             text-align: center;
         }
 
-        .action-btn.second {
+        .action-btn.second { /*кнопка ОТПРАВИТЬ ОТЧЕТ*/
             background-color: #E5EDF8;
             color: #2D3083;
         }
 
-        @media (max-width: 1300px) {
+        @media (max-width: 1300px) { /*описание стилей для меньших экранов*/
             .header, .main-content {
                 width: 100%;
             }
 
-            .header::after {
+            .header::after { /*все что касается линии под надписью на шапке*/
             content: "";
             position: absolute;
             bottom: 40px;
@@ -159,21 +144,21 @@
             background-color: #6699FF;
             }
 
-            .header h1 {
+            .header h1 { /*надпись заголовка на шапке*/
                 font-size: 48px;
             }
 
-            .main-content {
+            .main-content { /*все кроме шапки*/
                 padding: 40px;
                 
             }
 
-            .form-field {
+            .form-field { /*блок для отделения элементов*/
                 flex-direction: column;
                 align-items: flex-start;
             }
 
-            label[for="your-product"] {
+            label[for="your-product"] { /*надпись Выбранный продукт:*/
             font-size: 36px;
             color: #003366;
             width: 600px;
@@ -181,7 +166,7 @@
             padding: 20 0px;
             }
 
-            label[for="operating-mode"] {
+            label[for="operating-mode"] { /*надпись с режимом работы: АКТИВНО*/
             font-size: 36px;
             color: #66CC33;
             font-weight: bold;
@@ -190,14 +175,12 @@
             width: 190px;
             }
 
-            
-
-            .actions-container {
+            .actions-container { /*блок с кнопками*/
                 flex-direction: column;
                 align-items: center;
             }
 
-            .action-btn {
+            .action-btn { /*описание стиля кнопок*/
                 width: 100%;
                 margin-bottom: 20px;
             }
@@ -206,32 +189,33 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Название линии</h1>
+    <header class="header">  <!-- шапка -->
+        <h1>Название линии</h1> <!-- заголовок на шапке -->
     </header>
-    <main class="main-content">
-        <div class="form-field">
-            <label for="product">Продукт:</label>
-            <p>00000000001</p>
+
+    <main class="main-content"> <!-- блок для всего, кроме шапки -->
+        <div class="form-field"> <!-- блок для разделения -->
+            <label for="product">Продукт:</label> <!-- надпись "Продукт" -->
+            <p>00000000001</p> <!-- надпись с номером продукта -->
         </div>
-        <div class="form-field">
-            <label for="batch-number">Номер партии:</label>
-            <p>1</p>
+        <div class="form-field"> <!-- блок для разделения -->
+            <label for="batch-number">Номер партии:</label> <!-- надпись "Номер партии:" -->
+            <p>1</p> <!-- надпись с номером партии -->
         </div>
-        <div class="form-field">
-            <label for="mode">Режим:</label>
-            <p>Маркировка: Нанесение</p>
-            <label for="operating-mode">АКТИВНО</label>
-            <div class="circle"></div>
+        <div class="form-field"> <!-- блок для всего, кроме шапки -->
+            <label for="mode">Режим:</label> <!-- надпись "Режим" -->
+            <p>Маркировка: Нанесение</p> <!-- надпись с режимом работы -->
+            <label for="operating-mode">АКТИВНО</label> <!-- надпись со статусом работы "АКТИВНО" -->
+            <div class="circle"></div> <!-- кружок около надписи АКТИВНО -->
         </div>
 
-        <div class="your-product-view">
-            <label for="your_product"> Выбранный продукт:</label>
-            <label for="your-product-view"> Крем-мыло с оливковым маслом и ромашкой "Ушастый нянь"</label>
+        <div class="your-product-view"> <!-- блок для выбранного продукта -->
+            <label for="your_product"> Выбранный продукт:</label> <!-- надпись "Выбранный продукт" -->
+            <label for="your-product-view"> Крем-мыло с оливковым маслом и ромашкой "Ушастый нянь"</label> <!-- надпись с выбранным продуктом -->
         </div>
-        <div class="actions-container">
-            <button class="action-btn">СТОП</button>
-            <button class="action-btn second">ОТПРАВИТЬ ОТЧЁТ</button>
+        <div class="actions-container"> <!-- блок с кнопками -->
+            <button class="action-btn">СТОП</button> <!-- кнопка СТОП -->
+            <button class="action-btn second">ОТПРАВИТЬ ОТЧЁТ</button> <!-- кнопка ОТПРАВИТЬ ОТЧЕТ -->
         </div>
     </main>
 </body>
