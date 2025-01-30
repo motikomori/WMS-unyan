@@ -12,14 +12,14 @@
             background-color: #ffffff;
         }
 
-        .header {
+        .header { /*все что касается прямоугольничка-шапки*/
             width: 100%;
             height: 130px;
             background-color: #FFFF99;
             position: relative;
         }
 
-        .header h1 {
+        .header h1 { /*все что касается надписи на шапке*/
             font-size: 64px;
             color: #003366;
             position: absolute;
@@ -28,7 +28,7 @@
             margin: 0;
         }
 
-        .header::after {
+        .header::after { /*все что касается линии под надписью на шапке*/
             content: "";
             position: absolute;
             bottom: 20px;
@@ -38,27 +38,27 @@
             background-color: #6699FF;
         }
 
-        .main-content {
+        .main-content { /*блок для всех элементов кроме шапки*/
             max-width: 1440px;
             width: 100%;
             padding: 30px;
             box-sizing: border-box;
         }
 
-        .form-field {
+        .form-field { /*блок для отделения элементов*/
             margin-bottom: 30px;
             display: flex;
             align-items: center;
         }
 
-        label {
+        label { /*все для надписей вне шапки*/
             font-size: 36px;
             color: #003366;
             width: 270px;
             margin-left: 80px; 
         }
 
-        input[type="text"] {
+        input[type="text"] { /*текстовое поле*/
             width: 600px;
             height: 90px;
             font-size: 32px;
@@ -69,14 +69,14 @@
             margin-left: 80px;
         }
 
-        label[for="your-product"] {
+        label[for="your-product"] { /*надпись Выбранный продукт:*/
             font-size: 36px;
             color: #003366;
             width: 1000px;
             margin-left: 40px; 
         }
         
-        .your-product-view{
+        .your-product-view{ /*блок выбранного продукта*/
 
             font-size: 36px;
             border: none; 
@@ -86,7 +86,7 @@
             
         }
 
-        label[for="your-product-view"] {
+        label[for="your-product-view"] { /*надпись с названием выбранного продукта*/
             font-size: 32px;
             color: #003366;
             width: 600px;
@@ -94,7 +94,7 @@
         }
 
 
-        .reference-btn {
+        .reference-btn { /*кнопка СПРАВОЧНИК*/
             width: 300px;
             height: 90px;
             font-size: 32px;
@@ -106,20 +106,20 @@
             cursor: pointer;
         }
 
-        .extra-options {
+        .extra-options { /*блок Дополнительные свойства*/
             display: flex;
             align-items: center;
             margin-left: 80px;
         }
 
-        .extra-options a {
+        .extra-options a { /*надпись Дополнительные свойства*/
             font-size: 32px;
             color: #003366;
             text-decoration: none;
             
         }
 
-        .extra-options-btn {
+        .extra-options-btn { /*кнопка около надписи Дополнительные свойства*/
             width: 64px;
             height: 64px;
             background-color: #6699FF;
@@ -131,19 +131,19 @@
             cursor: pointer;
         }
 
-        .extra-options-btn img {
+        .extra-options-btn img { /*настройки изображения на кнопке около надписи Дополнительные свойства*/
             width: 35px;
             height: 35px;
         }
 
-        .actions-container {
+        .actions-container { /*блок с кнопками*/
             display: flex;
             justify-content: space-between;
             margin-top: 50px;
             padding: 0 80px;
         }
 
-        .action-btn {
+        .action-btn { /*кнопка ЗАПУСТИТЬ + само описание стиля кнопок*/
             width: 330px;
             height: 90px;
             font-size: 32px;
@@ -155,17 +155,17 @@
             text-align: center;
         }
 
-        .action-btn.second {
+        .action-btn.second { /*кнопка СОБЫТИЯ*/
             background-color: #E5EDF8;
             color: #2D3083;
         }
 
-        @media (max-width: 1300px) {
+        @media (max-width: 1300px) {/*описание стилей для меньших экранов*/
             .header, .main-content {
                 width: 100%;
             }
 
-            .header::after {
+            .header::after { /*все что касается линии под надписью на шапке*/
             content: "";
             position: absolute;
             bottom: 40px;
@@ -175,27 +175,27 @@
             background-color: #6699FF;
             }
 
-            .header h1 {
+            .header h1 { /*надпись заголовка на шапке*/
                 font-size: 48px;
             }
 
-            .main-content {
+            .main-content { /*все кроме шапки*/
                 padding: 20px;
                 
             }
 
-            .form-field {
+            .form-field { /*блок для отделения элементов*/
                 flex-direction: column;
                 align-items: flex-start;
             }
 
-            input[type="text"], .reference-btn {
+            input[type="text"], .reference-btn { /*текстовое поле + кнопка СПРАВОЧНИК*/
                 width: 80%;
                 margin: 10px 0;
                 margin-left: 80px;
             }
 
-            label[for="your-product"] {
+            label[for="your-product"] { /*надпись Выбранный продукт:*/
             font-size: 36px;
             color: #003366;
             width: 600px;
@@ -203,12 +203,12 @@
             padding: 20 0px;
             }
 
-            .actions-container {
+            .actions-container { /*блок с кнопками*/
                 flex-direction: column;
                 align-items: center;
             }
 
-            .action-btn {
+            .action-btn { /*описание стиля кнопок*/
                 width: 100%;
                 margin-bottom: 20px;
             }
@@ -217,32 +217,32 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Название линии</h1>
+    <header class="header"> <!-- шапка -->
+        <h1>Название линии</h1> <!-- заголовок на шапке -->
     </header>
-    <main class="main-content">
-        <div class="form-field">
-            <label for="product">Продукт</label>
-            <input type="text" id="product" placeholder="Выберите продукт, или сканируйте">
-            <button class="reference-btn">СПРАВОЧНИК</button>
+    <main class="main-content"> <!-- блок для всего, кроме шапки -->
+        <div class="form-field"> <!-- блок для разделения -->
+            <label for="product">Продукт</label> <!-- надпись "Продукт" -->
+            <input type="text" id="product" placeholder="Выберите продукт, или сканируйте"> <!-- текстовое поле для "Продукт" -->
+            <button class="reference-btn">СПРАВОЧНИК</button> <!-- кнопка СПРАВОЧНИК -->
         </div>
-        <div class="form-field">
-            <label for="batch-number">Номер партии</label>
-            <input type="text" id="batch-number" placeholder="Введите номер партии">
+        <div class="form-field"> <!-- блок для разделения -->
+            <label for="batch-number">Номер партии</label> <!-- надпись "Номер партии:" -->
+            <input type="text" id="batch-number" placeholder="Введите номер партии"> <!-- текстовое поле для "Номер партии:" -->
         </div>
-        <div class="your-product-view">
-            <label for="your_product"> Выбранный продукт:</label>
-            <label for="your-product-view"> Крем-мыло с оливковым маслом и ромашкой "Ушастый нянь"</label>
+        <div class="your-product-view"> <!-- блок для выбранного продукта -->
+            <label for="your_product"> Выбранный продукт:</label> <!-- надпись "Выбранный продукт" -->
+            <label for="your-product-view"> Крем-мыло с оливковым маслом и ромашкой "Ушастый нянь"</label> <!-- надпись с выбранным продуктом -->
         </div>
-        <div class="extra-options">
-            <a href="#">Дополнительные свойства</a>
-            <div class="extra-options-btn">
-                <img src="img/edit.png" alt="icon">
+        <div class="extra-options"> <!-- блок с дополнительными свойствами -->
+            <a href="#">Дополнительные свойства</a> <!-- надпись-ссылка дополнительные свойства -->
+            <div class="extra-options-btn"> <!-- кнопка рядом с надписью доп. свойства -->
+                <img src="img/edit.png" alt="icon"> <!-- изображение на кнопке -->
             </div>
         </div>
-        <div class="actions-container">
-            <button class="action-btn">ЗАПУСТИТЬ</button>
-            <button class="action-btn second">СОБЫТИЯ</button>
+        <div class="actions-container"> <!-- блок с кнопками -->
+            <button class="action-btn">ЗАПУСТИТЬ</button> <!-- кнопка ЗАПУСТИТЬ -->
+            <button class="action-btn second">СОБЫТИЯ</button> <!-- кнопка СОБЫТИЯ -->
         </div>
     </main>
 </body>
