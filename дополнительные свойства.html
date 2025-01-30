@@ -12,14 +12,14 @@
             background-color: #ffffff;
         }
 
-        .header { /*все что касается прямоугольничка-шапки*/
+        .header {
             width: 100%;
             height: 130px;
             background-color: #FFFF99;
             position: relative;
         }
 
-        .header h1 { /*все что касается надписи на шапке*/
+        .header h1 {
             font-size: 64px;
             color: #003366;
             position: absolute;
@@ -28,7 +28,7 @@
             margin: 0;
         }
 
-        .header::after { /*все что касается линии под надписью на шапке*/
+        .header::after {
             content: "";
             position: absolute;
             bottom: 20px;
@@ -38,61 +38,34 @@
             background-color: #6699FF;
         }
 
-        .main-content { /*блок для всех элементов кроме шапки*/
+        .main-content {
             max-width: 1440px;
             width: 100%;
             padding: 30px;
             box-sizing: border-box;
         }
 
-        .form-field { /*блок для отделения элементов*/
+        .form-field {
             margin-bottom: 30px;
             display: flex;
             align-items: center;
         }
 
-        label { /*все для надписей вне шапки*/
+        label {
             font-size: 36px;
             color: #003366;
             width: 270px;
-            margin-left: 80px; 
-        }
-
-        input[type="text"] { /*текстовое поле*/
-            width: 600px;
-            height: 90px;
-            font-size: 32px;
-            padding: 0 20px;
-            border: 2px solid #6699FF;
-            border-radius: 30px;
-            box-sizing: border-box;
             margin-left: 80px;
         }
 
-        label[for="your-product"] { /*надпись Выбранный продукт:*/
+        label[for="extra-options"] { /*надпись Дополнительные свойства*/
             font-size: 36px;
+            width: 100%;
             color: #003366;
-            width: 1000px;
-            margin-left: 40px; 
-        }
-        
-        .your-product-view{ /*блок выбранного продукта*/
-
-            font-size: 36px;
-            border: none; 
             display: flex;
-            align-items: center;
-            margin-bottom: 200px;
-            
+            justify-content: center;
+            margin-bottom: 40px;
         }
-
-        label[for="your-product-view"] { /*надпись с названием выбранного продукта*/
-            font-size: 32px;
-            color: #003366;
-            width: 600px;
-            height: 90px;
-        }
-
 
         .reference-btn { /*кнопка СПРАВОЧНИК*/
             width: 300px;
@@ -106,34 +79,49 @@
             cursor: pointer;
         }
 
-        .extra-options { /*блок Дополнительные свойства*/
-            display: flex;
-            align-items: center;
-            margin-left: 80px;
-        }
-
-        .extra-options a { /*надпись Дополнительные свойства*/
+        .change { /*кнопка ИЗМЕНИТЬ*/
+            width: 300px;
+            height: 90px;
             font-size: 32px;
-            color: #003366;
-            text-decoration: none;
-            
-        }
-
-        .extra-options-btn { /*кнопка около надписи Дополнительные свойства*/
-            width: 64px;
-            height: 64px;
             background-color: #6699FF;
-            border-radius: 50%;
-            margin-left: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            margin-left: 30px;
             cursor: pointer;
         }
 
-        .extra-options-btn img { /*настройки изображения на кнопке около надписи Дополнительные свойства*/
-            width: 35px;
-            height: 35px;
+        p { /*надписи после названий полей*/
+            font-size: 36px;
+            color: #003366;
+            margin-left: 80px; 
+        }
+
+        input, select, button {
+            font-size: 32px;
+            padding: 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            margin-left: 80px;
+        }
+
+        input[type="text"] { /*текстовое поле*/
+            width: 600px;
+            height: 90px;
+            font-size: 32px;
+            padding: 0 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 80px;
+        }
+
+        .button {
+            background-color: #6699FF;
+            color: white;
+            cursor: pointer;
+            border: none;
+            margin-left: 10px;
         }
 
         .actions-container { /*блок с кнопками*/
@@ -153,11 +141,6 @@
             border-radius: 30px;
             cursor: pointer;
             text-align: center;
-        }
-
-        .action-btn.second { /*кнопка СОБЫТИЯ*/
-            background-color: #E5EDF8;
-            color: #2D3083;
         }
 
         @media (max-width: 1300px) { /*описание стилей для меньших экранов*/
@@ -213,37 +196,105 @@
                 margin-bottom: 20px;
             }
         }
-
     </style>
 </head>
 <body>
-    <header class="header"> <!-- шапка -->
-        <h1>Дополнительные свойства</h1> <!-- заголовок на шапке -->
+    <header class="header">
+        <h1>Название линии</h1>
     </header>
-    <main class="main-content"> <!-- блок для всего, кроме шапки -->
-        <div class="form-field"> <!-- блок для разделения -->
-            <label for="product">Продукт</label> <!-- надпись "Продукт" -->
-            <input type="text" id="product" placeholder="Выберите продукт, или сканируйте"> <!-- текстовое поле для "Продукт" -->
-            <button class="reference-btn">СПРАВОЧНИК</button> <!-- кнопка СПРАВОЧНИК -->
+    <main class="main-content">
+        <label for="extra-options">Дополнительные свойства</label>
+        <div class="form-field">
+            <label for="mode">Режим работы:</label>
+            <select id="mode">
+                <option>Работа</option>
+                <option>Ожидание</option>
+            </select>
         </div>
-        <div class="form-field"> <!-- блок для разделения -->
-            <label for="batch-number">Номер партии</label> <!-- надпись "Номер партии:" -->
-            <input type="text" id="batch-number" placeholder="Введите номер партии"> <!-- текстовое поле для "Номер партии:" -->
+        <div class="form-field">
+            <label for="report">Отчет о нанесении:</label>
+            <select id="report">
+                <option>По печати</option>
+                <option>По упаковке</option>
+            </select>
         </div>
-        <div class="your-product-view"> <!-- блок для выбранного продукта -->
-            <label for="your_product"> Выбранный продукт:</label> <!-- надпись "Выбранный продукт" -->
-            <label for="your-product-view"> Крем-мыло с оливковым маслом и ромашкой "Ушастый нянь"</label> <!-- надпись с выбранным продуктом -->
+        <div class="form-field">
+            <label for="gtin">GTIN продукта:</label>
+            <input type="text" id="gtin" placeholder="Выберите продукт">
+            <button class="reference-btn">СПРАВОЧНИК</button>
         </div>
-        <div class="extra-options"> <!-- блок с дополнительными свойствами -->
-            <a href="#">Дополнительные свойства</a> <!-- надпись-ссылка дополнительные свойства -->
-            <div class="extra-options-btn"> <!-- кнопка рядом с надписью доп. свойства -->
-                <img src="img/edit.png" alt="icon"> <!-- изображение на кнопке -->
-            </div>
+        <div class="form-field">
+            <label for="ean">Индивидуальный EAN13:</label>
+            <input type="text" id="ean" placeholder="Выберите EAN13">
+            <button class="reference-btn">СПРАВОЧНИК</button>
+        </div>
+        <div class="form-field">
+            <label for="date">Дата изготовления:</label>
+            <input type="date" id="date">
+        </div>
+        <div class="form-field">
+            <label for="gtin-extension">Расширение GTIN:</label>
+            <input type="text" id="gtin-extension" placeholder="Введите расширение GTIN">
+        </div>
+        <div class="form-field">
+            <label for="manufacture-date">Дата изготовления:</label>
+            <input type="date" id="manufacture-date" value="2024-11-12">
+        </div>
+        <div class="form-field">
+            <label for="packaging-date">Дата упаковки/фасовки:</label>
+            <input type="date" id="priority" value="2024-11-12">
+            <input type="checkbox" id="expiry-priority"> <label for="expiry-priority">приоритет для срока годности</label>
+        </div>
+        <div class="form-field">
+            <label for="shift">Смена:</label>
+            <input type="number" id="shift" value="1">
+            <button class="change">ИЗМЕНИТЬ</button>
+        </div>
+        <div class="form-field">
+            <label for="print-batch">Партия (для печати):</label>
+            <input type="number" id="print-batch" value="1" min="1">
+            <button class="button" onclick="increaseValue('print-batch')">+</button>
+            <button class="change">ИЗМЕНИТЬ</button>
+        </div>
+        <div class="form-field">
+            <label for="evsd-batch">Партия (для эВСД):</label>
+            <input type="number" id="evsd-batch" value="1" min="1">
+            <button class="button" onclick="increaseValue('evsd-batch')">+</button>
+            <button class="change">ИЗМЕНИТЬ</button>
+        </div>
+        <div class="form-field">
+            <label>Годен до:</label>
+            <p>Авторасчет</p>
+        </div>
+        <div class="form-field">
+            <label for="batch-size">Размер партии:</label>
+            <input type="number" id="batch-size" value="1">
+        </div>
+        <div class="form-field">
+            <label for="first-batch">Начать первую партию с:</label>
+            <input type="number" id="first-batch" value="1">
+        </div>
+        <div class="form-field">
+            <label for="units-in-group">Единиц в группе:</label>
+            <input type="number" id="units-in-group" value="1">
+        </div>
+        <div class="form-field">
+            <label for="gtin-group">GTIN группы:</label>
+            <input type="text" id="gtin-group" placeholder="Введите GTIN группы">
+        </div>
+        <div class="form-field">
+            <label for="groups-in-box">Групп в коробе:</label>
+            <input type="number" id="groups-in-box" value="1">
         </div>
         <div class="actions-container"> <!-- блок с кнопками -->
-            <button class="action-btn">ЗАПУСТИТЬ</button> <!-- кнопка ЗАПУСТИТЬ -->
-            <button class="action-btn second">СОБЫТИЯ</button> <!-- кнопка СОБЫТИЯ -->
+            <button class="action-btn">ПРИМЕНИТЬ</button> <!-- кнопка ПРИМЕНИТЬ -->
         </div>
     </main>
+    <script>
+        function increaseValue(id) {
+            let input = document.getElementById(id);
+            input.value = parseInt(input.value) + 1;
+        }
+    </script>
 </body>
 </html>
