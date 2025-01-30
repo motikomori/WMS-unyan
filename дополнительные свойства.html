@@ -38,6 +38,15 @@
             background-color: #6699FF;
         }
 
+        .close-button {
+            width: 130px;
+            height: 130px;
+            background-color: #6699FF;
+            cursor: pointer;
+            border: none;
+            margin-left: 90%;
+        }
+
         .main-content {
             max-width: 1440px;
             width: 100%;
@@ -54,7 +63,7 @@
         label {
             font-size: 36px;
             color: #003366;
-            width: 270px;
+            width: 520px;
             margin-left: 80px;
         }
 
@@ -94,7 +103,7 @@
         p { /*надписи после названий полей*/
             font-size: 36px;
             color: #003366;
-            margin-left: 80px; 
+            margin-left: 20px; 
         }
 
         input, select, button {
@@ -102,7 +111,7 @@
             padding: 20px;
             border: 2px solid #6699FF;
             border-radius: 30px;
-            margin-left: 80px;
+            margin-left: 0px;
         }
 
         input[type="text"] { /*текстовое поле*/
@@ -113,7 +122,48 @@
             border: 2px solid #6699FF;
             border-radius: 30px;
             box-sizing: border-box;
-            margin-left: 80px;
+            margin-left: 0px;
+        }
+
+        input[id="gtin"], input[id="ean"] { /**/
+            width: 600px;
+            height: 90px;
+            font-size: 32px;
+            padding: 0 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 100px;
+        }
+
+        input[id="smena"] { /**/
+            width: 600px;
+            height: 90px;
+            font-size: 32px;
+            padding: 0 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 100px;
+        }
+
+        input[id="print-batch"], input[id="evsd-batch"]{ /**/
+            width: 600px;
+            height: 90px;
+            font-size: 32px;
+            padding: 0 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 180px;
+        }
+
+        input[type="checkbox"] { /**/
+            font-size: 32px;
+            padding: 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            margin-left: 630px;
         }
 
         .button {
@@ -201,6 +251,7 @@
 <body>
     <header class="header">
         <h1>Название линии</h1>
+        <button class="close-button"></button>
     </header>
     <main class="main-content">
         <label for="extra-options">Дополнительные свойства</label>
@@ -238,16 +289,20 @@
         </div>
         <div class="form-field">
             <label for="manufacture-date">Дата изготовления:</label>
-            <input type="date" id="manufacture-date" value="2024-11-12">
+            <input type="date">
         </div>
         <div class="form-field">
             <label for="packaging-date">Дата упаковки/фасовки:</label>
-            <input type="date" id="priority" value="2024-11-12">
-            <input type="checkbox" id="expiry-priority"> <label for="expiry-priority">приоритет для срока годности</label>
+            <input type="date" >
+            
+        </div>
+        <div class="form-field"> 
+            <input type="checkbox" id="priority"> 
+            <label for="expiry-priority">приоритет для срока годности</label>
         </div>
         <div class="form-field">
-            <label for="shift">Смена:</label>
-            <input type="number" id="shift" value="1">
+            <label for="smena">Смена:</label>
+            <input type="number" id="smena" value="1">
             <button class="change">ИЗМЕНИТЬ</button>
         </div>
         <div class="form-field">
