@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Заказ кодов</title>
+    <title>Дополнительные свойства</title>
     <style>
         body {
             font-family: 'Fira Sans', sans-serif;
@@ -33,7 +33,7 @@
             position: absolute;
             bottom: 20px;
             left: 110px;
-            width: 380px;
+            width: 510px;
             height: 4px;
             background-color: #6699FF;
         }
@@ -69,23 +69,29 @@
             margin-left: 80px;
         }
 
-        .circle { /*кружок около ПОЛУЧЕНО*/
-            width: 38px; 
-            height: 38px; 
-            background-color: #66CC33; 
-            border-radius: 50%;
-            margin-left: 20px;
+        label[for="your-product"] { /*надпись Выбранный продукт:*/
+            font-size: 36px;
+            color: #003366;
+            width: 1000px;
+            margin-left: 40px; 
         }
         
-        
-        label[for="operating-mode"] { /*надпись с режимом работы: ПОЛУЧЕНО*/
+        .your-product-view{ /*блок выбранного продукта*/
+
             font-size: 36px;
-            color: #66CC33;
-            font-weight: bold;
-            margin-left: 20px; 
-            margin-right: 0px; 
-            width: 190px;
-            }
+            border: none; 
+            display: flex;
+            align-items: center;
+            margin-bottom: 200px;
+            
+        }
+
+        label[for="your-product-view"] { /*надпись с названием выбранного продукта*/
+            font-size: 32px;
+            color: #003366;
+            width: 600px;
+            height: 90px;
+        }
 
 
         .reference-btn { /*кнопка СПРАВОЧНИК*/
@@ -100,14 +106,44 @@
             cursor: pointer;
         }
 
-        .actions-container { /*блок с кнопками*/
-            margin-top: 200px;
-            padding: 0 80px;
+        .extra-options { /*блок Дополнительные свойства*/
             display: flex;
             align-items: center;
+            margin-left: 80px;
         }
 
-        .action-btn { /*кнопка ЗАКАЗАТЬ*/
+        .extra-options a { /*надпись Дополнительные свойства*/
+            font-size: 32px;
+            color: #003366;
+            text-decoration: none;
+            
+        }
+
+        .extra-options-btn { /*кнопка около надписи Дополнительные свойства*/
+            width: 64px;
+            height: 64px;
+            background-color: #6699FF;
+            border-radius: 50%;
+            margin-left: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .extra-options-btn img { /*настройки изображения на кнопке около надписи Дополнительные свойства*/
+            width: 35px;
+            height: 35px;
+        }
+
+        .actions-container { /*блок с кнопками*/
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding: 0 80px;
+        }
+
+        .action-btn { /*кнопка ЗАПУСТИТЬ + само описание стиля кнопок*/
             width: 330px;
             height: 90px;
             font-size: 32px;
@@ -119,6 +155,10 @@
             text-align: center;
         }
 
+        .action-btn.second { /*кнопка СОБЫТИЯ*/
+            background-color: #E5EDF8;
+            color: #2D3083;
+        }
 
         @media (max-width: 1300px) { /*описание стилей для меньших экранов*/
             .header, .main-content {
@@ -130,7 +170,7 @@
             position: absolute;
             bottom: 40px;
             left: 110px;
-            width: 290px;
+            width: 390px;
             height: 4px;
             background-color: #6699FF;
             }
@@ -155,29 +195,22 @@
                 margin-left: 80px;
             }
 
-
-            label[for="operating-mode"] { /*надпись с режимом работы: ПОЛУЧЕНО*/
+            label[for="your-product"] { /*надпись Выбранный продукт:*/
             font-size: 36px;
-            color: #66CC33;
-            font-weight: bold;
-            margin-left: 0px; 
-            width: 190px;
-            }
-
-
-            .action-btn { /*кнопка ЗАКАЗАТЬ*/
-                width: 100%;
-                margin-bottom: 20px;
+            color: #003366;
+            width: 600px;
+            margin-left: 80px; 
+            padding: 20 0px;
             }
 
             .actions-container { /*блок с кнопками*/
-            flex-direction: column;
-            align-items: center;
-            margin-top: 100px;
+                flex-direction: column;
+                align-items: center;
             }
 
-            .circle { /*кружок около ПОЛУЧЕНО*/
-            margin-left: 0; 
+            .action-btn { /*описание стиля кнопок*/
+                width: 100%;
+                margin-bottom: 20px;
             }
         }
 
@@ -185,7 +218,7 @@
 </head>
 <body>
     <header class="header"> <!-- шапка -->
-        <h1>Заказ кодов</h1> <!-- заголовок на шапке -->
+        <h1>Дополнительные свойства</h1> <!-- заголовок на шапке -->
     </header>
     <main class="main-content"> <!-- блок для всего, кроме шапки -->
         <div class="form-field"> <!-- блок для разделения -->
@@ -194,14 +227,22 @@
             <button class="reference-btn">СПРАВОЧНИК</button> <!-- кнопка СПРАВОЧНИК -->
         </div>
         <div class="form-field"> <!-- блок для разделения -->
-            <label for="batch-number">Количество товара</label> <!-- надпись "Количество товара" -->
-            <input type="text" id="batch-number" placeholder="Введите количество товара"> <!-- текстовое поле для "Количество товара" -->
+            <label for="batch-number">Номер партии</label> <!-- надпись "Номер партии:" -->
+            <input type="text" id="batch-number" placeholder="Введите номер партии"> <!-- текстовое поле для "Номер партии:" -->
         </div>
-
+        <div class="your-product-view"> <!-- блок для выбранного продукта -->
+            <label for="your_product"> Выбранный продукт:</label> <!-- надпись "Выбранный продукт" -->
+            <label for="your-product-view"> Крем-мыло с оливковым маслом и ромашкой "Ушастый нянь"</label> <!-- надпись с выбранным продуктом -->
+        </div>
+        <div class="extra-options"> <!-- блок с дополнительными свойствами -->
+            <a href="#">Дополнительные свойства</a> <!-- надпись-ссылка дополнительные свойства -->
+            <div class="extra-options-btn"> <!-- кнопка рядом с надписью доп. свойства -->
+                <img src="img/edit.png" alt="icon"> <!-- изображение на кнопке -->
+            </div>
+        </div>
         <div class="actions-container"> <!-- блок с кнопками -->
-            <button class="action-btn">ЗАКАЗАТЬ</button> <!-- кнопка ЗАКАЗАТЬ -->
-            <label for="operating-mode">ПОЛУЧЕНО</label> <!-- надпись со статусом работы "ПОЛУЧЕНО" -->
-            <div class="circle"></div> <!-- кружок около надписи ПОЛУЧЕНО -->
+            <button class="action-btn">ЗАПУСТИТЬ</button> <!-- кнопка ЗАПУСТИТЬ -->
+            <button class="action-btn second">СОБЫТИЯ</button> <!-- кнопка СОБЫТИЯ -->
         </div>
     </main>
 </body>
