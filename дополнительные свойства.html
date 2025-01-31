@@ -116,8 +116,20 @@
             margin-left: 0px;
         }
 
-        input[type="text"] { /*текстовое поле*/
-            width: 600px;
+
+
+
+        #priority {
+        transform:scale(2.0);
+        opacity:0.9;
+        cursor:pointer;
+        }
+
+
+
+
+        input[type="text"], input[type="date"], input[type="number"] { /*текстовое поле*/
+            width: 780px;
             height: 90px;
             font-size: 32px;
             padding: 0 20px;
@@ -127,6 +139,24 @@
             margin-left: 0px;
         }
 
+        select { /**/
+            width: 300px;
+            height: 90px;
+            font-size: 32px;
+            padding: 0 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 0px;
+        }
+
+        select { /*убирает стрелочки у селекта*/
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -o-appearance: none;
+        }
+        
         input[id="gtin"], input[id="ean"] { /**/
             width: 600px;
             height: 90px;
@@ -258,17 +288,21 @@
         <label for="extra-options">Дополнительные свойства</label>
         <div class="form-field">
             <label for="mode">Режим работы:</label>
+            <div class="select">
             <select id="mode">
                 <option>Работа</option>
                 <option>Ожидание</option>
             </select>
+            </div>
         </div>
         <div class="form-field">
             <label for="report">Отчет о нанесении:</label>
+            <div class="select">
             <select id="report">
                 <option>По печати</option>
                 <option>По упаковке</option>
             </select>
+            </div>
         </div>
         <div class="form-field">
             <label for="gtin">GTIN продукта:</label>
