@@ -39,13 +39,30 @@
         }
 
         .close-button {
-            width: 130px;
-            height: 130px;
-            background-color: #6699FF;
+            width: 100px;
+            height: 100px;
+            background-color: #FFFF99;
             cursor: pointer;
             border: none;
+            margin: 20px 0 0 0; 
+            display: inline-block;
             margin-left: 90%;
         }
+
+        .close-button img { /*настройки изображения на кнопке около надписи Дополнительные свойства*/
+            width: 100px;
+            height: 100px;
+        }
+
+
+
+
+
+
+
+
+
+
 
         .main-content {
             max-width: 1440px;
@@ -116,9 +133,6 @@
             margin-left: 0px;
         }
 
-
-
-
         #priority {
         transform:scale(2.0);
         opacity:0.9;
@@ -126,9 +140,7 @@
         }
 
 
-
-
-        input[type="text"], input[type="date"], input[type="number"] { /*текстовое поле*/
+        input[type="text"], input[type="date"], input[type="number"] { /*текстовые поля*/
             width: 780px;
             height: 90px;
             font-size: 32px;
@@ -139,7 +151,7 @@
             margin-left: 0px;
         }
 
-        select { /**/
+        select { /*настройка селекта*/
             width: 300px;
             height: 90px;
             font-size: 32px;
@@ -156,7 +168,7 @@
         appearance: none;
         -o-appearance: none;
         }
-        
+
         input[id="gtin"], input[id="ean"] { /**/
             width: 600px;
             height: 90px;
@@ -243,6 +255,26 @@
                 font-size: 48px;
             }
 
+            .close-button {
+            width: 60px;
+            height: 60px;
+            background-color: #FFFF99;
+            cursor: pointer;
+            border: none;
+            margin: 36px 0 0 0; 
+            display: inline-block;
+            margin-left: 90%;
+            }
+
+            .close-button img { /*настройки изображения на кнопке около надписи Дополнительные свойства*/
+            width: 60px;
+            height: 60px;
+            }
+
+
+
+
+
             .main-content { /*все кроме шапки*/
                 padding: 20px;
                 
@@ -282,7 +314,9 @@
 <body>
     <header class="header">
         <h1>Название линии</h1>
-        <button class="close-button"></button>
+        <div class="close-button"> <!-- кнопка рядом с надписью доп. свойства -->
+            <img src="img/close.png" alt="icon"> <!-- изображение на кнопке -->
+        </div>
     </header>
     <main class="main-content">
         <label for="extra-options">Дополнительные свойства</label>
