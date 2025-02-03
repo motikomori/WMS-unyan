@@ -181,6 +181,13 @@
             }
         }
 
+        .status-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+        display: flex;
+        align-items: center; /* Выравниваем элементы по центру */
+        gap: 20px; /* Расстояние между текстом и кружком */
+        white-space: nowrap; /* Запрещаем перенос текста */
+        }
+
     </style>
 </head>
 <body>
@@ -200,8 +207,11 @@
 
         <div class="actions-container"> <!-- блок с кнопками -->
             <button class="action-btn">ЗАКАЗАТЬ</button> <!-- кнопка ЗАКАЗАТЬ -->
-            <label for="operating-mode">ПОЛУЧЕНО</label> <!-- надпись со статусом работы "ПОЛУЧЕНО" -->
-            <div class="circle"></div> <!-- кружок около надписи ПОЛУЧЕНО -->
+            
+            <div class="status-wrapper"> <!-- контейнер для надписи и кружка -->
+                <label for="operating-mode">ПОЛУЧЕНО</label> <!-- надпись со статусом работы -->
+                <div class="circle"></div> <!-- кружок около надписи ПОЛУЧЕНО -->
+            </div>
         </div>
     </main>
 </body>
