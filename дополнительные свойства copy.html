@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дополнительные свойства</title>
+    <style>
+        body {
+            font-family: 'Fira Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        .header {
+            width: 100%;
+            height: 130px;
+            background-color: #FFFF99;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 64px;
+            color: #003366;
+            position: absolute;
+            top: 30px;
+            left: 110px;
+            margin: 0;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: 20px;
+            left: 110px;
+            width: 510px;
+            height: 4px;
+            background-color: #6699FF;
+        }
+
+        .close-button {
+            width: 100px;
+            height: 100px;
+            background-color: #FFFF99;
+            cursor: pointer;
+            border: none;
+            margin: 20px 0 0 0; 
+            display: inline-block;
+            margin-left: 90%;
+        }
+
+        .close-button img { /*настройки изображения на кнопке около надписи Дополнительные свойства*/
+            width: 100px;
+            height: 100px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .main-content {
+            max-width: 1440px;
+            width: 100%;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .form-field {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        label {
+            font-size: 36px;
+            color: #003366;
+            width: 520px;
+            margin-left: 80px;
+        }
+
+        label[for="extra-options"] { /*надпись Дополнительные свойства*/
+            font-size: 36px;
+            width: 100%;
+            color: #003366;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        
+
+        .reference-btn { /*кнопка СПРАВОЧНИК*/
+            width: 300px;
+            height: 90px;
+            font-size: 32px;
+            background-color: #6699FF;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        .change { /*кнопка ИЗМЕНИТЬ*/
+            width: 300px;
+            height: 90px;
+            font-size: 32px;
+            background-color: #6699FF;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        p { /*надписи после названий полей*/
+            font-size: 36px;
+            color: #003366;
+            margin-left: 20px; 
+        }
+
+        input, select, button {
+            font-size: 32px;
+            padding: 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            margin-left: 0px;
+        }
+
+        #priority {
+        transform:scale(2.0);
+        opacity:0.9;
+        cursor:pointer;
+        }
+
+
+        input[type="text"], input[type="date"], input[type="number"] { /*текстовые поля*/
+            width: 780px;
+            height: 90px;
+            font-size: 32px;
+            padding: 0 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 0px;
+        }
+
+        select { /*настройка селекта*/
+            width: 300px;
+            height: 90px;
+            font-size: 32px;
+            padding: 0 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 0px;
+        }
+
+        select { /*убирает стрелочки у селекта*/
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -o-appearance: none;
+        }
+
+        input[id="gtin"], input[id="ean"] { /**/
+            width: 600px;
+            height: 90px;
+            font-size: 32px;
+            padding: 0 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 100px;
+        }
+
+        input[id="smena"] { /**/
+            width: 600px;
+            height: 90px;
+            font-size: 32px;
+            padding: 0 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 100px;
+        }
+
+        input[id="print-batch"], input[id="evsd-batch"]{ /**/
+            width: 600px;
+            height: 90px;
+            font-size: 32px;
+            padding: 0 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 180px;
+        }
+
+        input[type="checkbox"] { /**/
+            font-size: 32px;
+            border: 2px solid #6699FF;
+            margin-left: 630px;
+            margin-right: 0px;
+        }
+
+        .button {
+            background-color: #6699FF;
+            color: white;
+            cursor: pointer;
+            border: none;
+            margin-left: 10px;
+        }
+
+        .actions-container { /*блок с кнопками*/
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding: 0 80px;
+        }
+
+        .action-btn { /*кнопка ЗАПУСТИТЬ + само описание стиля кнопок*/
+            width: 330px;
+            height: 90px;
+            font-size: 32px;
+            color: #fff;
+            background-color: #6699FF;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        @media (max-width: 1500px) { /*описание стилей для меньших экранов*/
+            .header, .main-content {
+                width: 100%;
+            }
+
+            .header::after { /*все что касается линии под надписью на шапке*/
+            content: "";
+            position: absolute;
+            bottom: 40px;
+            left: 110px;
+            width: 390px;
+            height: 4px;
+            background-color: #6699FF;
+            }
+
+            .header h1 { /*надпись заголовка на шапке*/
+                font-size: 48px;
+            }
+
+            .close-button {
+            width: 60px;
+            height: 60px;
+            background-color: #FFFF99;
+            cursor: pointer;
+            border: none;
+            margin: 36px 0 0 0; 
+            display: inline-block;
+            margin-left: 90%;
+            }
+
+            .close-button img { /*настройки изображения на кнопке около надписи Дополнительные свойства*/
+            width: 60px;
+            height: 60px;
+            }
+
+
+
+
+
+            .main-content { /*все кроме шапки*/
+                padding: 20px;
+                
+            }
+
+            .form-field { /*блок для отделения элементов*/
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            input[type="text"], .reference-btn { /*текстовое поле + кнопка СПРАВОЧНИК*/
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
+            }
+
+
+            label {
+                font-size: 36px;
+                color: #003366;
+                width: 520px;
+                margin-left: 80px;
+            }
+
+            label[for="extra-options"] { /*надпись Дополнительные свойства*/
+                font-size: 36px;
+                width: 100%;
+                color: #003366;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 40px;
+                margin-left: 0px;
+            }
+
+
+            .reference-btn, .change { /*кнопка СПРАВОЧНИК*/
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
+            }
+
+
+            input, select, button {
+                font-size: 32px;
+                padding: 20px;
+                border: 2px solid #6699FF;
+                border-radius: 30px;
+                margin-left: 0px;
+            }
+
+            #priority {
+            transform:scale(2.0);
+            opacity:0.9;
+            cursor:pointer;
+            }
+
+
+            input[type="text"], input[type="date"], input[type="number"], select { /*текстовые поля*/
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
+            }
+
+
+            input[id="gtin"], input[id="ean"], input[id="smena"], input[id="print-batch"], input[id="evsd-batch"]  { /**/
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
+            }
+
+    
+
+            input[type="checkbox"] { /**/
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
+            }
+
+
+
+
+
+            label[for="your-product"] { /*надпись Выбранный продукт:*/
+            font-size: 36px;
+            color: #003366;
+            width: 600px;
+            margin-left: 80px; 
+            padding: 20 0px;
+            }
+
+            .actions-container { /*блок с кнопками*/
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .action-btn { /*описание стиля кнопок*/
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+
+
+
+
+
+        .data-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+        display: flex;
+        align-items: center; /* Выравниваем элементы по центру */
+        gap: 0px; /* Расстояние между текстом и кружком */
+        white-space: nowrap; /* Запрещаем перенос текста */
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Название линии</h1>
+        <div class="close-button"> <!-- кнопка рядом с надписью доп. свойства -->
+            <img src="img/close.png" alt="icon"> <!-- изображение на кнопке -->
+        </div>
+    </header>
+    <main class="main-content">
+        <label for="extra-options">Дополнительные свойства</label>
+        <div class="form-field">
+            <label for="mode">Режим работы:</label>
+            <div class="select">
+            <select id="mode">
+                <option>Работа</option>
+                <option>Ожидание</option>
+            </select>
+            </div>
+        </div>
+        <div class="form-field">
+            <label for="report">Отчет о нанесении:</label>
+            <div class="select">
+            <select id="report">
+                <option>По печати</option>
+                <option>По упаковке</option>
+            </select>
+            </div>
+        </div>
+        <div class="form-field">
+            <label for="gtin">GTIN продукта:</label>
+            <input type="text" id="gtin" placeholder="Выберите продукт">
+            <button class="reference-btn">СПРАВОЧНИК</button>
+        </div>
+        <div class="form-field">
+            <label for="ean">Индивидуальный EAN13:</label>
+            <input type="text" id="ean" placeholder="Выберите EAN13">
+            <button class="reference-btn">СПРАВОЧНИК</button>
+        </div>
+        <div class="form-field">
+            <label for="date">Дата изготовления:</label>
+            <input type="date" id="date">
+        </div>
+        <div class="form-field">
+            <label for="gtin-extension">Расширение GTIN:</label>
+            <input type="text" id="gtin-extension" placeholder="Введите расширение GTIN">
+        </div>
+        <div class="form-field">
+            <label for="manufacture-date">Дата изготовления:</label>
+            <input type="date">
+        </div>
+        <div class="form-field">
+            <label for="packaging-date">Дата упаковки/фасовки:</label>
+            <input type="date" >
+            
+        </div>
+        <div class="data-wrapper"> <!-- контейнер  -->
+            <input type="checkbox" id="priority"> 
+            <label for="expiry-priority">приоритет для срока годности</label>
+        </div>
+        <div class="form-field">
+            <label for="smena">Смена:</label>
+            <input type="number" id="smena" value="1">
+            <button class="change">ИЗМЕНИТЬ</button>
+        </div>
+        <div class="form-field">
+            <label for="print-batch">Партия (для печати):</label>
+            <div class="data-wrapper"> <!-- контейнер  -->
+            <input type="number" id="print-batch" value="1" min="1">
+            <button class="button" onclick="increaseValue('print-batch')">+</button>
+            </div>
+            <button class="change">ИЗМЕНИТЬ</button>
+        </div>
+        <div class="form-field">
+            <label for="evsd-batch">Партия (для эВСД):</label>
+            <div class="data-wrapper"> <!-- контейнер  -->
+            <input type="number" id="evsd-batch" value="1" min="1">
+            <button class="button" onclick="increaseValue('evsd-batch')">+</button>
+            </div>
+            <button class="change">ИЗМЕНИТЬ</button>
+        </div>
+        <div class="form-field">
+            <div class="data-wrapper"> <!-- контейнер  -->
+            <label for="goden">Годен до:</label>
+            <p>Авторасчет</p>
+            </div>
+        </div>
+        <div class="form-field">
+            <label for="batch-size">Размер партии:</label>
+            <input type="number" id="batch-size" value="1">
+        </div>
+        <div class="form-field">
+            <label for="first-batch">Начать первую партию с:</label>
+            <input type="number" id="first-batch" value="1">
+        </div>
+        <div class="form-field">
+            <label for="units-in-group">Единиц в группе:</label>
+            <input type="number" id="units-in-group" value="1">
+        </div>
+        <div class="form-field">
+            <label for="gtin-group">GTIN группы:</label>
+            <input type="text" id="gtin-group" placeholder="Введите GTIN группы">
+        </div>
+        <div class="form-field">
+            <label for="groups-in-box">Групп в коробе:</label>
+            <input type="number" id="groups-in-box" value="1">
+        </div>
+        <div class="actions-container"> <!-- блок с кнопками -->
+            <button class="action-btn">ПРИМЕНИТЬ</button> <!-- кнопка ПРИМЕНИТЬ -->
+        </div>
+    </main>
+    <script>
+        function increaseValue(id) {
+            let input = document.getElementById(id);
+            input.value = parseInt(input.value) + 1;
+        }
+    </script>
+</body>
+</html>
