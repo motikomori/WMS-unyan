@@ -132,6 +132,14 @@
             color: #2D3083;
         }
 
+        .status-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+        display: flex;
+        align-items: center; /* Выравниваем элементы по центру */
+        gap: 0px; /* Расстояние между текстом и кружком */
+        white-space: nowrap; /* Запрещаем перенос текста */
+        }
+
+
         @media (max-width: 1300px) { /*описание стилей для меньших экранов*/
             .header, .main-content {
                 width: 100%;
@@ -200,15 +208,15 @@
                 width: 100%;
                 margin-bottom: 20px;
             }
+
+            .status-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+            display: flex;
+            align-items: center; /* Выравниваем элементы по центру */
+            gap: 0px; /* Расстояние между текстом и кружком */
+            white-space: nowrap; /* Запрещаем перенос текста */
+            }
         }
 
-
-        .status-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
-        display: flex;
-        align-items: center; /* Выравниваем элементы по центру */
-        gap: 8px; /* Расстояние между текстом и кружком */
-        white-space: nowrap; /* Запрещаем перенос текста */
-        }
 
     </style>
 </head>

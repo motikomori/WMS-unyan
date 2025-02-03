@@ -119,6 +119,14 @@
             text-align: center;
         }
 
+        .status-wrapper { /*блок для обьединения ПОЛУЧЕНО и кружочка*/
+        display: flex;
+        align-items: center; /* Выравниваем элементы по центру */
+        gap: 0px; /* Расстояние между текстом и кружком */
+        white-space: nowrap; /* Запрещаем перенос текста */
+        }
+
+
 
         @media (max-width: 1300px) { /*описание стилей для меньших экранов*/
             .header, .main-content {
@@ -179,15 +187,17 @@
             .circle { /*кружок около ПОЛУЧЕНО*/
             margin-left: 0; 
             }
+
+            .status-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+            display: flex;
+            align-items: center; /* Выравниваем элементы по центру */
+            gap: 20px; /* Расстояние между текстом и кружком */
+            white-space: nowrap; /* Запрещаем перенос текста */
+            }
+
         }
 
-        .status-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
-        display: flex;
-        align-items: center; /* Выравниваем элементы по центру */
-        gap: 20px; /* Расстояние между текстом и кружком */
-        white-space: nowrap; /* Запрещаем перенос текста */
-        }
-
+        
     </style>
 </head>
 <body>
