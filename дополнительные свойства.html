@@ -12,14 +12,14 @@
             background-color: #ffffff;
         }
 
-        .header {
+        .header { /*все что касается прямоугольничка-шапки*/
             width: 100%;
             height: 130px;
             background-color: #FFFF99;
             position: relative;
         }
 
-        .header h1 {
+        .header h1 { /*все что касается надписи на шапке*/
             font-size: 64px;
             color: #003366;
             position: absolute;
@@ -28,7 +28,7 @@
             margin: 0;
         }
 
-        .header::after {
+        .header::after { /*все что касается линии под надписью на шапке*/
             content: "";
             position: absolute;
             bottom: 20px;
@@ -38,7 +38,7 @@
             background-color: #6699FF;
         }
 
-        .close-button {
+        .close-button { /*кнопка закрытия*/
             width: 100px;
             height: 100px;
             background-color: #FFFF99;
@@ -49,7 +49,7 @@
             margin-left: 90%;
         }
 
-        .close-button img { /*настройки изображения на кнопке около надписи Дополнительные свойства*/
+        .close-button img { /*настройки изображения на кнопке закрытия*/
             width: 100px;
             height: 100px;
         }
@@ -59,25 +59,20 @@
 
 
 
-
-
-
-
-
-        .main-content {
+        .main-content { /*блок для всех элементов кроме шапки*/
             max-width: 1440px;
             width: 100%;
             padding: 30px;
             box-sizing: border-box;
         }
 
-        .form-field {
+        .form-field { /*блок для отделения элементов*/
             margin-bottom: 30px;
             display: flex;
             align-items: center;
         }
 
-        label {
+        label { /*все для надписей вне шапки*/
             font-size: 36px;
             color: #003366;
             width: 520px;
@@ -126,20 +121,13 @@
             margin-left: 20px; 
         }
 
-        input, select, button {
+        input, select, button { /*настройки текстовых полей, селекта и кнопок*/
             font-size: 32px;
             padding: 20px;
             border: 2px solid #6699FF;
             border-radius: 30px;
             margin-left: 0px;
         }
-
-        #priority {
-        transform:scale(2.0);
-        opacity:0.9;
-        cursor:pointer;
-        }
-
 
         input[type="text"], input[type="date"], input[type="number"] { /*текстовые поля*/
             width: 780px;
@@ -170,7 +158,7 @@
         -o-appearance: none;
         }
 
-        input[id="gtin"], input[id="ean"] { /**/
+        input[id="gtin"], input[id="ean"], input[id="smena"] { /*настройки текстовых полей джитин иан и смены*/
             width: 600px;
             height: 90px;
             font-size: 32px;
@@ -181,18 +169,7 @@
             margin-left: 100px;
         }
 
-        input[id="smena"] { /**/
-            width: 600px;
-            height: 90px;
-            font-size: 32px;
-            padding: 0 20px;
-            border: 2px solid #6699FF;
-            border-radius: 30px;
-            box-sizing: border-box;
-            margin-left: 100px;
-        }
-
-        input[id="print-batch"], input[id="evsd-batch"]{ /**/
+        input[id="print-batch"], input[id="evsd-batch"]{ /*настройки текстовых полей партии*/
             width: 600px;
             height: 90px;
             font-size: 32px;
@@ -203,14 +180,21 @@
             margin-left: 180px;
         }
 
-        input[type="checkbox"] { /**/
+        input[type="checkbox"] { /*настройки чекбокса*/
             font-size: 32px;
             border: 2px solid #6699FF;
             margin-left: 630px;
             margin-right: 0px;
         }
 
-        .button {
+        #priority { /*настройка размера чекбокса*/
+        transform:scale(2.0);
+        opacity:0.9;
+        cursor:pointer;
+        }
+
+
+        .button { /*настройки кнопок*/
             background-color: #6699FF;
             color: white;
             cursor: pointer;
@@ -218,14 +202,14 @@
             margin-left: 10px;
         }
 
-        .actions-container { /*блок с кнопками*/
+        .actions-container { /*блок с кнопками снизу*/
             display: flex;
             justify-content: space-between;
             margin-top: 50px;
             padding: 0 80px;
         }
 
-        .action-btn { /*кнопка ЗАПУСТИТЬ + само описание стиля кнопок*/
+        .action-btn { /*кнопка ПРИМЕНИТЬ + само описание стиля кнопок*/
             width: 330px;
             height: 90px;
             font-size: 32px;
@@ -256,7 +240,7 @@
                 font-size: 48px;
             }
 
-            .close-button {
+            .close-button { /*кнопка закрытия*/
             width: 60px;
             height: 60px;
             background-color: #FFFF99;
@@ -271,7 +255,6 @@
             width: 60px;
             height: 60px;
             }
-
 
 
 
@@ -293,7 +276,7 @@
             }
 
 
-            label {
+            label { /*все для надписей вне шапки*/
                 font-size: 36px;
                 color: #003366;
                 width: 520px;
@@ -318,20 +301,13 @@
             }
 
 
-            input, select, button {
+            input, select, button { /*настройки текстовых полей, селекта и кнопок*/
                 font-size: 32px;
                 padding: 20px;
                 border: 2px solid #6699FF;
                 border-radius: 30px;
                 margin-left: 0px;
             }
-
-            #priority {
-            transform:scale(2.0);
-            opacity:0.9;
-            cursor:pointer;
-            }
-
 
             input[type="text"], input[type="date"], input[type="number"], select { /*текстовые поля*/
                 width: 80%;
@@ -340,7 +316,7 @@
             }
 
 
-            input[id="gtin"], input[id="ean"], input[id="smena"], input[id="print-batch"], input[id="evsd-batch"]  { /**/
+            input[id="gtin"], input[id="ean"], input[id="smena"], input[id="print-batch"], input[id="evsd-batch"]  { /*настройки текстовых полей джитин иан смены и партии*/
                 width: 80%;
                 margin: 10px 0;
                 margin-left: 80px;
@@ -348,7 +324,7 @@
 
     
 
-            input[type="checkbox"] { /**/
+            input[type="checkbox"] { /*настройки чекбокса*/
                 width: 80%;
                 margin: 10px 0;
                 margin-left: 80px;
@@ -377,52 +353,47 @@
             }
 
 
-        .print-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+            .print-wrapper { /*блок для обьединения блоков печати*/
+                display: flex;
+            align-items: center; /* Выравниваем элементы по центру */
+            gap: 0px; /* Расстояние между текстом и кружком */
+            white-space: nowrap; /* Запрещаем перенос текста */
+            width: 1080px;
+            }
+            
+
+            .goden-wrapper { /*блок для обьединения годен до и надписи*/
+                display: flex;
+            align-items: center; /* Выравниваем элементы по центру */
+            gap: 0px; /* Расстояние между текстом и кружком */
+            white-space: nowrap; /* Запрещаем перенос текста */
+            }
+
+            .priority-wrapper { /*блок для обьединения чекбокса и надписи возле даты*/
+            gap: 0px; /* Расстояние между текстом и кружком */
+            width: 720px;
+            white-space: nowrap; /* Запрещаем перенос текста */
+            margin-left: 0px;
+            }
+
+
+
+            p { /*надписи после названий полей*/
+                font-size: 36px;
+                color: #003366;
+                margin-left: -280px; 
+            }
+            
+
+        }
+
+        .goden-wrapper, .priority-wrapper { /*блоки для обьединения элементов*/
+            margin-bottom: 30px;
             display: flex;
-        align-items: center; /* Выравниваем элементы по центру */
-        gap: 0px; /* Расстояние между текстом и кружком */
-        white-space: nowrap; /* Запрещаем перенос текста */
-        width: 1080px;
+            align-items: center;
         }
 
-        .data-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
-            display: flex;
-        align-items: center; /* Выравниваем элементы по центру */
-        gap: 0px; /* Расстояние между текстом и кружком */
-        white-space: nowrap; /* Запрещаем перенос текста */
-        }
-
-        .goden-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
-            display: flex;
-        align-items: center; /* Выравниваем элементы по центру */
-        gap: 0px; /* Расстояние между текстом и кружком */
-        white-space: nowrap; /* Запрещаем перенос текста */
-        }
-
-        .priority-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
-        gap: 0px; /* Расстояние между текстом и кружком */
-        width: 720px;
-        white-space: nowrap; /* Запрещаем перенос текста */
-        margin-left: 0px;
-        }
-
-
-
-        p { /*надписи после названий полей*/
-            font-size: 36px;
-            color: #003366;
-            margin-left: -280px; 
-        }
-
-
-
-
-        }
-
-
-
-
-
+        /* Общие стили для .print-wrapper обьединения для партии */
 
         .print-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
             display: flex;
@@ -430,38 +401,12 @@
             width: 710px;
         }
 
-        .data-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-        }
-
-        .goden-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-        }
-
-        .priority-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-        }
-
-
-
-
-
-
-        /* Общие стили для .print-wrapper */
-
         .print-wrapper input {
         flex: 1; /* Поле ввода занимает большую часть пространства */
         padding: 20px;
         box-sizing: border-box; /* Учитывает padding и border в ширине элемента */
         }
 
-        /* Медиа-запрос для экранов меньше 1500px */
         @media (max-width: 1500px) {
         .print-wrapper {
             width: 86%; /* Ширина .print-wrapper равна 80% от ширины экрана */
