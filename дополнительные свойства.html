@@ -92,6 +92,7 @@
             justify-content: center;
             margin-bottom: 40px;
         }
+        
 
         
 
@@ -236,7 +237,7 @@
             text-align: center;
         }
 
-        @media (max-width: 1300px) { /*описание стилей для меньших экранов*/
+        @media (max-width: 1500px) { /*описание стилей для меньших экранов*/
             .header, .main-content {
                 width: 100%;
             }
@@ -291,6 +292,72 @@
                 margin-left: 80px;
             }
 
+
+            label {
+                font-size: 36px;
+                color: #003366;
+                width: 520px;
+                margin-left: 80px;
+            }
+
+            label[for="extra-options"] { /*надпись Дополнительные свойства*/
+                font-size: 36px;
+                width: 100%;
+                color: #003366;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 40px;
+                margin-left: 0px;
+            }
+
+
+            .reference-btn, .change { /*кнопка СПРАВОЧНИК*/
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
+            }
+
+
+            input, select, button {
+                font-size: 32px;
+                padding: 20px;
+                border: 2px solid #6699FF;
+                border-radius: 30px;
+                margin-left: 0px;
+            }
+
+            #priority {
+            transform:scale(2.0);
+            opacity:0.9;
+            cursor:pointer;
+            }
+
+
+            input[type="text"], input[type="date"], input[type="number"], select { /*текстовые поля*/
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
+            }
+
+
+            input[id="gtin"], input[id="ean"], input[id="smena"], input[id="print-batch"], input[id="evsd-batch"]  { /**/
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
+            }
+
+    
+
+            input[type="checkbox"] { /**/
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
+            }
+
+
+
+
+
             label[for="your-product"] { /*надпись Выбранный продукт:*/
             font-size: 36px;
             color: #003366;
@@ -308,7 +375,104 @@
                 width: 100%;
                 margin-bottom: 20px;
             }
+
+
+        .print-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+            display: flex;
+        align-items: center; /* Выравниваем элементы по центру */
+        gap: 0px; /* Расстояние между текстом и кружком */
+        white-space: nowrap; /* Запрещаем перенос текста */
+        width: 1080px;
         }
+
+        .data-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+            display: flex;
+        align-items: center; /* Выравниваем элементы по центру */
+        gap: 0px; /* Расстояние между текстом и кружком */
+        white-space: nowrap; /* Запрещаем перенос текста */
+        }
+
+        .goden-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+            display: flex;
+        align-items: center; /* Выравниваем элементы по центру */
+        gap: 0px; /* Расстояние между текстом и кружком */
+        white-space: nowrap; /* Запрещаем перенос текста */
+        }
+
+        .priority-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+        gap: 0px; /* Расстояние между текстом и кружком */
+        width: 720px;
+        white-space: nowrap; /* Запрещаем перенос текста */
+        margin-left: 0px;
+        }
+
+
+
+        p { /*надписи после названий полей*/
+            font-size: 36px;
+            color: #003366;
+            margin-left: -280px; 
+        }
+
+
+
+
+        }
+
+
+
+
+
+
+        .print-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+            display: flex;
+            margin-left: -20px;
+            width: 710px;
+        }
+
+        .data-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .goden-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .priority-wrapper { /*блок для обьединения АКТИВНО и кружочка*/
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+
+
+
+
+
+        /* Общие стили для .print-wrapper */
+
+        .print-wrapper input {
+        flex: 1; /* Поле ввода занимает большую часть пространства */
+        padding: 10px;
+        box-sizing: border-box; /* Учитывает padding и border в ширине элемента */
+        }
+
+        /* Медиа-запрос для экранов меньше 1500px */
+        @media (max-width: 1500px) {
+        .print-wrapper {
+            width: 86%; /* Ширина .print-wrapper равна 80% от ширины экрана */
+            margin: 0 auto; /* Центрирует элемент по горизонтали */
+            margin-left: 0px;
+        }
+        }
+
+
+
+
     </style>
 </head>
 <body>
@@ -365,7 +529,7 @@
             <input type="date" >
             
         </div>
-        <div class="form-field"> 
+        <div class="priority-wrapper"> <!-- контейнер  -->
             <input type="checkbox" id="priority"> 
             <label for="expiry-priority">приоритет для срока годности</label>
         </div>
@@ -376,19 +540,25 @@
         </div>
         <div class="form-field">
             <label for="print-batch">Партия (для печати):</label>
+            <div class="print-wrapper"> <!-- контейнер  -->
             <input type="number" id="print-batch" value="1" min="1">
             <button class="button" onclick="increaseValue('print-batch')">+</button>
+            </div>
             <button class="change">ИЗМЕНИТЬ</button>
         </div>
         <div class="form-field">
             <label for="evsd-batch">Партия (для эВСД):</label>
+            <div class="print-wrapper"> <!-- контейнер  -->
             <input type="number" id="evsd-batch" value="1" min="1">
             <button class="button" onclick="increaseValue('evsd-batch')">+</button>
+            </div>
             <button class="change">ИЗМЕНИТЬ</button>
         </div>
         <div class="form-field">
+            <div class="goden-wrapper"> <!-- контейнер  -->
             <label for="goden">Годен до:</label>
             <p>Авторасчет</p>
+            </div>
         </div>
         <div class="form-field">
             <label for="batch-size">Размер партии:</label>
