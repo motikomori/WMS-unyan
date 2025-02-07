@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>События</title>
+    <style>
+        body {
+            font-family: 'Fira Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        .header { /*все что касается прямоугольничка-шапки*/
+            width: 100%;
+            height: 130px;
+            background-color: #FFFF99;
+            position: relative;
+        }
+
+        .header h1 { /*все что касается надписи на шапке*/
+            font-size: 64px;
+            color: #003366;
+            position: absolute;
+            top: 30px;
+            left: 110px;
+            margin: 0;
+        }
+
+        .header::after { /*все что касается линии под надписью на шапке*/
+            content: "";
+            position: absolute;
+            bottom: 20px;
+            left: 110px;
+            width: 510px;
+            height: 4px;
+            background-color: #6699FF;
+        }
+
+
+
+
+
+
+        .main-content { /*блок для всех элементов кроме шапки*/
+            max-width: 1440px;
+            width: 100%;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .form-field { /*блок для отделения элементов*/
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        label { /*все для надписей вне шапки*/
+            font-size: 36px;
+            color: #003366;
+            width: 60px;
+            margin-left: 80px;
+        }
+
+        label[for="extra-options"] { /*надпись Дополнительные свойства*/
+            font-size: 36px;
+            width: 100%;
+            color: #003366;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        label[for="params"] { /*надпись Дополнительные свойства*/
+            font-size: 36px;
+            width: 380px;
+            color: #003366;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        label[for="search"] { /*надпись Дополнительные свойства*/
+            font-size: 36px;
+            width: 120px;
+            color: #003366;
+            display: flex;
+            justify-content: center;
+        }
+        
+
+        .reference-btn { /*кнопка СПРАВОЧНИК*/
+            width: 300px;
+            height: 90px;
+            font-size: 32px;
+            background-color: #6699FF;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        .change { /*кнопка ИЗМЕНИТЬ*/
+            width: 300px;
+            height: 90px;
+            font-size: 32px;
+            background-color: #6699FF;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        p { /*надписи после названий полей*/
+            font-size: 36px;
+            color: #003366;
+            margin-left: 20px; 
+        }
+
+        input, select, button { /*настройки текстовых полей, селекта и кнопок*/
+            font-size: 32px;
+            padding: 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            margin-left: 0px;
+        }
+
+
+        input[id="data"]{ /*настройки текстовых полей джитин иан и смены*/
+            height: 90px;
+            font-size: 32px;
+            padding: 0 20px;
+            border: 2px solid #6699FF;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 100px;
+            flex: 1;
+        }
+
+
+
+        .button { /*настройки кнопок*/
+            background-color: #6699FF;
+            color: white;
+            cursor: pointer;
+            border: none;
+            margin-left: 10px;
+        }
+
+        .actions-container { /*блок с кнопками снизу*/
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding: 0 80px;
+        }
+
+        .action-btn { /*кнопка ПРИМЕНИТЬ + само описание стиля кнопок*/
+            width: 330px;
+            height: 90px;
+            font-size: 32px;
+            color: #fff;
+            background-color: #6699FF;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .action-btn-second { /*кнопка ПРИМЕНИТЬ + само описание стиля кнопок*/
+            width: 330px;
+            height: 90px;
+            font-size: 32px;
+            color: #fff;
+            background-color: #6699FF;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+
+
+
+
+        @media (max-width: 850px) { /*описание стилей для меньших экранов*/
+            .header, .main-content {
+                width: 100%;
+            }
+
+            .header::after { /*все что касается линии под надписью на шапке*/
+            content: "";
+            position: absolute;
+            bottom: 40px;
+            left: 110px;
+            width: 390px;
+            height: 4px;
+            background-color: #6699FF;
+            }
+
+            .header h1 { /*надпись заголовка на шапке*/
+                font-size: 48px;
+            }
+
+
+
+
+
+            .main-content { /*все кроме шапки*/
+                padding: 20px;
+                
+            }
+
+            .form-field { /*блок для отделения элементов*/
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            input[type="text"], .reference-btn { /*текстовое поле + кнопка СПРАВОЧНИК*/
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
+            }
+
+
+            label { /*все для надписей вне шапки*/
+                font-size: 36px;
+                color: #003366;
+                width: 520px;
+                margin-left: 80px;
+            }
+
+            label[for="extra-options"] { /*надпись Дополнительные свойства*/
+                font-size: 36px;
+                width: 100%;
+                color: #003366;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 40px;
+                margin-left: 0px;
+            }
+
+
+            .reference-btn, .change { /*кнопка СПРАВОЧНИК*/
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
+            }
+
+
+            input, select, button { /*настройки текстовых полей, селекта и кнопок*/
+                font-size: 32px;
+                padding: 20px;
+                border: 2px solid #6699FF;
+                border-radius: 30px;
+                margin-left: 0px;
+            }
+
+            input[type="text"], input[type="date"], input[type="number"], select { /*текстовые поля*/
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
+            }
+
+
+            input[id="gtin"], input[id="ean"], input[id="smena"], input[id="print-batch"], input[id="evsd-batch"]  { /*настройки текстовых полей джитин иан смены и партии*/
+                width: 80%;
+                margin: 10px 0;
+                margin-left: 80px;
+            }
+
+
+
+            .actions-container { /*блок с кнопками*/
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .action-btn { /*описание стиля кнопок*/
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+        /*таблица*/
+        table {
+            width: 84%;
+            border-collapse: collapse;
+            font-family: sans-serif;
+            border: 1px solid #6699FF;
+            margin-left: 85px;
+        }
+
+        th, td {
+            border: 1px solid #6699FF;
+            height: 90px;
+            padding: 8px;
+            text-align: center;
+            font-size: 24px;
+            color: #003366;
+        }
+
+        th {
+            background-color: #f5f5fa;
+            border: 1px solid #6699FF;
+            font-size: 24px;
+            color: #003366;
+            font-weight: bold;
+        }
+
+
+
+
+
+
+        /* Для больших экранов */
+.form-field2 {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.form-field2 label {
+    font-size: 36px;
+            color: #003366;
+            width: 60px;
+            margin-left: 80px;
+    display: inline-block;
+}
+
+/* Для маленьких экранов */
+@media (max-width: 1200px) {
+    .form-field2 {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .form-field2 input {
+        display: inline-block;
+        width: calc(20% - 10px); /* два поля в одну строку */
+        margin-right: 20px;
+    }
+
+    .form-field2 input:last-child {
+        margin-right: 0;
+    }
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Название линии</h1>
+    </header>
+    <main class="main-content">
+        <label for="extra-options">Дополнительные свойства</label>
+        
+        <div class="form-field">
+            <label for="params">Параметры поиска</label>
+        </div>
+
+        <div class="form-field">
+        <div class="form-field2">
+            <label for="gtin">С</label>
+            <input type="date" id="date">
+            <input type="time" id="time">
+        </div>
+    </div>
+
+    <div class="form-field">
+        <div class="form-field2">
+            <label for="ean">По</label>
+            <input type="date" id="date">
+            <input type="time" id="time">
+        </div>
+    </div>
+        
+        <div class="actions-container"> <!-- блок с кнопкой -->
+            <button class="action-btn-second">ОТОБРАТЬ</button> <!-- кнопка -->
+        </div>
+
+        <div class="form-field">
+            <label for="search">Поиск</label>
+            <input type="text" id="product" placeholder="Введите запрос">
+        </div>
+
+        <table>
+            <tr>
+                <th>Дата и время</th>
+                <th>Где</th>
+                <th>Кто</th>
+                <th>Итого</th>
+            </tr>
+            <tr>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+            <tr>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+            <tr>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        </table>
+
+        <div class="actions-container"> <!-- блок с кнопкой -->
+            <button class="action-btn-second">НАЗАД</button> <!-- кнопка -->
+        </div>
+    </main>     
+</body>
+</html>
