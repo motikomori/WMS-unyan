@@ -38,11 +38,6 @@
             background-color: #6699FF;
         }
 
-
-
-
-
-
         .main-content { /*блок для всех элементов кроме шапки*/
             max-width: 1440px;
             width: 100%;
@@ -73,16 +68,16 @@
             margin-bottom: 40px;
         }
         
-        label[for="params"] { /*надпись Дополнительные свойства*/
+        label[for="params"] { /*надпись параметры*/
             font-size: 36px;
-            width: 380px;
+            width: 360px;
             color: #003366;
             display: flex;
             justify-content: center;
             margin-bottom: 40px;
         }
 
-        label[for="search"] { /*надпись Дополнительные свойства*/
+        label[for="search"] { /*надпись поиска*/
             font-size: 36px;
             width: 120px;
             color: #003366;
@@ -90,7 +85,6 @@
             justify-content: center;
         }
         
-
         .reference-btn { /*кнопка СПРАВОЧНИК*/
             width: 300px;
             height: 90px;
@@ -141,8 +135,6 @@
             flex: 1;
         }
 
-
-
         .button { /*настройки кнопок*/
             background-color: #6699FF;
             color: white;
@@ -184,9 +176,6 @@
         }
 
 
-
-
-
         @media (max-width: 850px) { /*описание стилей для меньших экранов*/
             .header, .main-content {
                 width: 100%;
@@ -205,10 +194,6 @@
             .header h1 { /*надпись заголовка на шапке*/
                 font-size: 48px;
             }
-
-
-
-
 
             .main-content { /*все кроме шапки*/
                 padding: 20px;
@@ -274,7 +259,6 @@
             }
 
 
-
             .actions-container { /*блок с кнопками*/
                 flex-direction: column;
                 align-items: center;
@@ -284,21 +268,7 @@
                 width: 100%;
                 margin-bottom: 20px;
             }
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
 
         /*таблица*/
         table {
@@ -326,47 +296,38 @@
             font-weight: bold;
         }
 
+            /* Для больших экранов */
+        .form-field2 {
+            display: inline-block;
+            margin-right: 20px;
+        }
 
+        .form-field2 label {
+            font-size: 36px;
+                    color: #003366;
+                    width: 60px;
+                    margin-left: 80px;
+            display: inline-block;
+        }
 
+        /* Для маленьких экранов */
+        @media (max-width: 1200px) {
+            .form-field2 {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
 
+            .form-field2 input {
+                display: inline-block;
+                width: calc(20% - 10px); /* два поля в одну строку */
+                margin-right: 20px;
+            }
 
-
-        /* Для больших экранов */
-.form-field2 {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-.form-field2 label {
-    font-size: 36px;
-            color: #003366;
-            width: 60px;
-            margin-left: 80px;
-    display: inline-block;
-}
-
-/* Для маленьких экранов */
-@media (max-width: 1200px) {
-    .form-field2 {
-        display: block;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .form-field2 input {
-        display: inline-block;
-        width: calc(20% - 10px); /* два поля в одну строку */
-        margin-right: 20px;
-    }
-
-    .form-field2 input:last-child {
-        margin-right: 0;
-    }
-}
-
-
-
-
+            .form-field2 input:last-child {
+                margin-right: 0;
+            }
+        }
 
     </style>
 </head>
