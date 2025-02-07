@@ -197,6 +197,151 @@
 
         }
 
+
+
+
+
+
+
+
+        
+        #popup-overlay { /*всплывающее окно*/
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        }
+        
+        #popup { /*все что на всплывающем окне*/
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #003366;
+        
+        }
+
+        .popup {
+  width: 880px;
+  background-color: #fff;
+  border-radius: 30px;
+  position: relative;
+  padding-bottom: 40px; /* Добавляем подушку внизу */
+}
+
+.popup-header {
+  position: relative;
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 36px;
+  position: absolute;
+  left: 70px;
+  top: 40px;
+}
+
+.close-button {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button img {
+  width: 100%;
+  height: 100%;
+}
+
+
+.popup-content {
+  padding: 30px;
+  box-sizing: border-box; /* Включает внутренние отступы в общую ширину */
+}
+
+.search-section {
+  margin-bottom: 30px;
+  width: 95%; /* Задаем ширину для всего блока поиска */
+  display: flex; /* Используем flexbox для правильного расположения элементов */
+  align-items: center;
+}
+
+.search-label {
+    width: 40px;
+  font-size: 32px;
+  margin-left: 40px;
+  margin-right: 0px; /* Добавляем отступ между текстом и полем ввода */
+}
+
+.search-input {
+  flex: 1; /* Поле ввода займет все доступное пространство */
+  height: 70px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.data-table {
+    font-size: 24px;
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+
+.pagination-info {
+  margin-top: 60px;
+  font-size: 32px;
+  margin-left: 40px;
+}
+
+
+/*таблица*/
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: sans-serif;
+            border: 1px solid #6699FF;
+        }
+
+        th, td {
+            border: 1px solid #6699FF;
+            height: 90px;
+            padding: 8px;
+            text-align: center;
+            font-size: 24px;
+            color: #003366;
+        }
+
+        th {
+            background-color: #f5f5fa;
+            border: 1px solid #6699FF;
+            font-size: 24px;
+            color: #003366;
+            font-weight: bold;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         
     </style>
 </head>
@@ -208,8 +353,57 @@
         <div class="form-field"> <!-- блок для разделения -->
             <label for="product">Продукт</label> <!-- надпись "Продукт" -->
             <input type="text" id="product" placeholder="Выберите продукт, или сканируйте"> <!-- текстовое поле для "Продукт" -->
-            <button class="reference-btn">СПРАВОЧНИК</button> <!-- кнопка СПРАВОЧНИК -->
+            <button class="reference-btn" onclick="showPopup()">СПРАВОЧНИК</button> <!-- кнопка СПРАВОЧНИК -->
         </div>
+
+
+
+
+        <div id="popup-overlay"> <!-- всплывающее окно со справочником -->
+            <div id="popup">
+                <div class="popup">
+                    <div class="popup-header">
+                      <h1 class="header-title">Список товаров</h1>
+                      <div class="close-button" onclick="hidePopup()"> <!-- кнопка закрытия -->
+                        <img src="img/close.png" alt="icon"> <!-- изображение на кнопке -->
+
+                    </div>
+                    </div>
+                    <div class="popup-content">
+                      <div class="search-section">
+                        <label class="search-label">Поиск</label>
+                        <input type="text" class="search-input" placeholder="Введите запрос">
+                      </div>
+                      <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Код товара</th>
+                                <th>Наименование</th>
+                                <th>GTIN</th>
+                              </tr>
+
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>11111111111111</td>
+                            <td>Крем-мыло с оливковым маслом и ромашкой "Ушастый нянь"</td>
+                            <td>11111111111111</td>
+                          </tr>
+                          <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="pagination-info">с 1 по 1 (всего 1)</div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+
+
         <div class="form-field"> <!-- блок для разделения -->
             <label for="batch-number">Количество товара</label> <!-- надпись "Количество товара" -->
             <input type="text" id="batch-number" placeholder="Введите количество товара"> <!-- текстовое поле для "Количество товара" -->
@@ -224,5 +418,26 @@
             </div>
         </div>
     </main>
+
+
+    <script> /*скрипт для всплывающего окна*/
+        const popupOverlay = document.getElementById("popup-overlay");
+const popup = document.getElementById("popup");
+ 
+function showPopup() {
+  popupOverlay.style.display = "block";
+}
+ 
+function hidePopup() {
+  popupOverlay.style.display = "none";
+}
+ 
+popupOverlay.addEventListener("click", hidePopup);
+popup.addEventListener("click", (event) => event.stopPropagation());
+
+    </script>
+
+
+
 </body>
 </html>

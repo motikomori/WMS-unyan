@@ -323,17 +323,49 @@
   margin-left: 40px;
 }
 
-.data-table td {
-  border: 1px solid #ddd;
-  padding: 15px;
-  text-align: center;
-}
 
 .pagination-info {
   margin-top: 60px;
   font-size: 32px;
   margin-left: 40px;
 }
+
+
+/*таблица*/
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: sans-serif;
+            border: 1px solid #6699FF;
+        }
+
+        th, td {
+            border: 1px solid #6699FF;
+            height: 90px;
+            padding: 8px;
+            text-align: center;
+            font-size: 24px;
+            color: #003366;
+        }
+
+        th {
+            background-color: #f5f5fa;
+            border: 1px solid #6699FF;
+            font-size: 24px;
+            color: #003366;
+            font-weight: bold;
+        }
+
+
+
+
+
+
+
+
+
+
+
 
     </style>
 </head>
@@ -350,33 +382,12 @@
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div id="popup-overlay"> <!-- всплывающее окно со справочником -->
             <div id="popup">
                 <div class="popup">
                     <div class="popup-header">
                       <h1 class="header-title">Список товаров</h1>
-                      <div class="close-button" onclick="hidePopup()"> <!-- кнопка рядом с надписью доп. свойства -->
+                      <div class="close-button" onclick="hidePopup()"> <!-- кнопка закрытия -->
                         <img src="img/close.png" alt="icon"> <!-- изображение на кнопке -->
 
                     </div>
@@ -389,9 +400,9 @@
                       <table class="data-table">
                         <thead>
                             <tr>
-                                <td>Код товара</td>
-                                <td>Наименование</td>
-                                <td>GTIN</td>
+                                <th>Код товара</th>
+                                <th>Наименование</th>
+                                <th>GTIN</th>
                               </tr>
 
                         </thead>
@@ -413,22 +424,6 @@
                   </div>
             </div>
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
           
         <div class="form-field"> <!-- блок для разделения -->

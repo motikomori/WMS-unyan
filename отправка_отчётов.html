@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Название линии</title>
+    <title>Отправка отчётов</title>
     <style>
         body {
             font-family: 'Fira Sans', sans-serif;
@@ -55,7 +55,7 @@
             font-size: 36px;
             color: #003366;
             width: 270px;
-            margin-left: 80px; 
+            margin-left: 80px;
         }
 
         input[type="text"] {
@@ -73,13 +73,13 @@
             font-size: 36px;
             color: #003366;
             width: 1000px;
-            margin-left: 40px; 
+            margin-left: 40px;
         }
         
         .your-product-view{
 
             font-size: 32px;
-            border: none; 
+            border: none;
             display: flex;
             align-items: center;
             margin-bottom: 200px;
@@ -199,7 +199,7 @@
             font-size: 36px;
             color: #003366;
             width: 600px;
-            margin-left: 80px; 
+            margin-left: 80px;
             padding: 20 0px;
             }
 
@@ -213,6 +213,7 @@
                 margin-bottom: 20px;
             }
         }
+        
         /*таблица*/
         table {
             width: 100%;
@@ -238,30 +239,45 @@
             font-weight: bold;
         }
         
-        label[for="operating-mode"] {
+        .status-label {
             font-size: 32px;
-            color: #66CC33;
             font-weight: bold;
-            margin-left: 0px; 
+            margin-left: 0px;
             width: 190px;
             }
 
-        .action-btn {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-
-            .actions-container {
+        .actions-container {
             flex-direction: column;
             align-items: center;
             margin-top: 100px;
-            }
+        }
 
-            .circle { /*кружок около АКТИВНО*/
-            width: 38px; 
-            height: 38px; 
-            background-color: #66CC33; 
+        .status-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Центрирование по горизонтали */
+        }
+
+        .circle { /*кружок около статуса*/
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
+            margin-left: 10px; /* Отступ кружка от надписи */
+        }
+
+        .accepted .status-label {
+            color: #66CC33;
+        }
+
+        .accepted .circle {
+            background-color: #66CC33;
+        }
+        .received .status-label {
+            color: orange;
+        }
+
+        .received .circle {
+            background-color: orange;
         }
 
         .status-button {
@@ -277,6 +293,7 @@
         }
 
     </style>
+    
 </head>
 <body>
     <header class="header">
@@ -293,19 +310,28 @@
                 <th>GTIN</th>
                 <th>Количество марок</th>
                 <th>Статус отчёта</th>
-            </tr>            
+            </tr>
             <tr>
                 <td>14.11.2024 13:18</td>
                 <td>00000000001</td>
                 <td>100</td>
-                <td><label for="operating-mode">ПОЛУЧЕНО</label>
-                    <div class="circle"></div></td>
+                <td>
+                    <div class="status-wrapper accepted"> <!-- контейнер для надписи и кружка -->
+                        <span class="status-label">ПРИНЯТ</span> <!-- надпись со статусом работы -->
+                        <div class="circle"></div> <!-- кружок около надписи -->
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td>14.11.2024 13:45</td>
                 <td>00000000003</td>
                 <td>100</td>
-                <td><label for="operating-mode">ОТПРАВЛЕНО</label></td>
+                <td>
+                    <div class="status-wrapper received"> <!-- контейнер для надписи и кружка -->
+                        <span class="status-label">ПОЛУЧЕН</span> <!-- надпись со статусом работы -->
+                        <div class="circle"></div> <!-- кружок около надписи -->
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td>14.11.2024 14:20</td>
